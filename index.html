@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线手机号码生成器 在线手机号码星号遮掩还原工具</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>在线手机号码生成器</h3>
+        <h3>在线手机号码星号遮掩还原工具</h3>
+
+        <div class="form-group">
+            <label for="location" class="strong">省份、城市、运营商：</label>
+            <div class="location-container">
+                <select id="province">
+                    <option value="">请选择省份</option>
+                </select>
+                <select id="city">
+                    <option value="">请选择城市</option>
+                    <option value="">未知</option>
+                </select>
+                <select id="operator">
+                    <option value="">请选择运营商</option>
+                    <option value="">未知</option>
+                    <option value="移动">移动</option>
+                    <option value="电信">电信</option>
+                    <option value="联通">联通</option>
+                    <option value="广电">广电</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-container">
+                <label for="inputField" class="strong">前3：</label>
+                <input type="text" id="first3" placeholder="请输入前3位" maxlength="3" oninput="this.value=this.value.replace(/\D/g,'').slice(0,3)">
+                <label for="inputField2" class="strong">后2：</label>
+                <input type="text" id="last2" placeholder="请输入后2位" maxlength="3" oninput="this.value=this.value.replace(/\D/g,'').slice(0,2)">
+
+            </div>
+        </div>
+
+        <button id="submit-button" class="submit-button" onclick="searchPhoneNumbers()">生成</button>
+
+        <div class="log" id="log">
+            <p class="strong">日志：</p>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+
+</html>

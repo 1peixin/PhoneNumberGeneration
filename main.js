@@ -67,11 +67,11 @@ function searchPhoneNumbers() {
         console.log(result);
         
         if (result.length > 0) {
-            logAdd(`${itemName}：找到 ${result.length} 个匹配的号段`);
+            logAdd(`${itemName}：找到 ${result.length + 1} 个匹配的号段`);
 
             var screenfirst3Result = screenfirst3(result, first3)
             console.log(screenfirst3Result)
-            logAdd(`${itemName} 根据前3筛选：找到 ${screenfirst3Result.length} 个匹配的号段`);
+            logAdd(`${itemName} 根据前3筛选：找到 ${screenfirst3Result.length + 1} 个匹配的号段`);
 
             PhoneNumberGeneration(screenfirst3Result, last2)
         } else {

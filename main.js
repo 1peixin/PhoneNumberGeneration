@@ -86,7 +86,7 @@ function searchPhoneNumbers() {
 
 // 从CSV文件加载号段数据
 function loadPhoneData() {
-    return fetch('./data/202302.csv')
+    return fetch('https://px-1302018334.cos-website.ap-guangzhou.myqcloud.com/PhoneNumberGeneration/data/202302.csv')
         .then(response => response.text())
         .then(data => {
             const rows = data.split('\n');

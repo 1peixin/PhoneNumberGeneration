@@ -60,8 +60,8 @@ function searchPhoneNumbers() {
     selectedOperator = operatorSelect.value;
     first3 = first3Input.value;
     last2 = last2Input.value;
-
-    if (selectedProvince !== "" & first3 !== "" & last2 !== "") {
+    // selectedProvince !== "" & 
+    if (first3 !== "" & last2 !== "") {
         var result = searchPhoneNumber(selectedProvince, selectedCity, selectedOperator);
         var itemName = `${selectedProvince || "未知"}-${selectedCity || "未知"}-${selectedOperator || "未知"}`;
 
@@ -80,7 +80,8 @@ function searchPhoneNumbers() {
 
         return;
     }
-    showSnackbar("最起码把省份 前3后2给填了吧");
+    // showSnackbar("最起码把省份 前3后2给填了吧");
+    showSnackbar("最起码前3后2给填了吧");
 }
 
 

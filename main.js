@@ -64,8 +64,8 @@ function searchPhoneNumbers() {
     if (first3 !== "" & last2 !== "") {
         var result = searchPhoneNumber(selectedProvince, selectedCity, selectedOperator);
         var itemName = `${selectedProvince || "未知"}-${selectedCity || "未知"}-${selectedOperator || "未知"}`;
-
         console.log(result);
+        
         if (result.length > 0) {
             logAdd(`${itemName}：找到 ${result.length} 个匹配的号段`);
 
@@ -146,6 +146,19 @@ function searchPhoneNumber(province, city, operator) {
     if (phoneData.length === 0) {
         console.error('号段数据尚未加载');
         return [];
+    }
+
+    // 如果province为空,返回所有号段
+    if (!province) {
+        let allNumbers = [];
+        Object.values(phoneHashTable).forEach(provinceObj => {
+            Object.values(provinceObj).forEach(cityObj => {
+                Object.values(cityObj).forEach(operatorList => {
+                    allNumbers = allNumbers.concat(operatorList);
+                });
+            });
+        });
+        return allNumbers;
     }
 
     let result = [];
